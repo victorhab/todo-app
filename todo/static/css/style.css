@@ -1,0 +1,172 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+div {
+
+}
+
+h2, h3 {
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  width: 20%;
+}
+
+h4 a {
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+p {
+  text-align: left !important;
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+    background: rgba(64, 229, 78, 0.5);
+    color: #fff;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+#loginBar {
+  background-color: #636363;
+  padding: 30px 40px;
+  min-width: 340px;
+  color: white;
+  text-align: center;
+}
+
+#loginSlide {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.parent {
+  overflow: hidden;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Style the header */
+.header {
+    background-color: #40b1e5;
+    padding: 30px 40px;
+    color: white;
+    font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+    text-align: center;
+    min-width: 340px;
+}
+
+/* Clear floats after the header */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+input {
+    border: none;
+    margin-right: 15px;
+    margin-top: 15px;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Style the "Add" button */
+.button {
+    padding: 10px;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 20%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #bbb;
+}
+
+#myDesc {
+  margin-top: 15px;
+  padding-bottom: 40px;
+}
+
+#username, #password {
+  width: 25% !important;
+}
+
+.loginClass {
+  display: flex;
+}
