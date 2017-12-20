@@ -22,6 +22,12 @@
     </div>
 
     <ul id="myUL">
+      {% for activity in activities %}
+        <li>
+          {{ activity.title }}
+          {{ activity.description|linebreaksbr }}
+        </li>
+      {% endfor %}
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="js/slide.js"></script>

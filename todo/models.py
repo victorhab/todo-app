@@ -5,7 +5,7 @@ from django.utils import timezone
 class Activity(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField()   
 
     def __str__(self):
         return self.title

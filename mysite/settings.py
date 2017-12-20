@@ -25,7 +25,7 @@ SECRET_KEY = '3j$tohuogt1ee5owlsgikn#x7o)k+rk4%afs^z_+h_b(k$-d#&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'http://2id60.win.tue.nl:8010/', 'http://victorhab.pythonanywhere.com/']
+ALLOWED_HOSTS = ['127.0.0.1', '2id60.win.tue.nl:8010', 'victorhab.pythonanywhere.com']
 
 
 # Application definition
