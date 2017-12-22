@@ -30,11 +30,13 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
+  var h4 = document.createElement("h4");
+  li.appendChild(h4);
   var inputValue = document.getElementById("myInput").value;
   var descValue = document.getElementById("myDesc").value;
   var t = document.createTextNode(inputValue + ": " + "\n");
   var d = document.createTextNode(descValue);
-  li.appendChild(t);
+  h4.appendChild(t);
   li.appendChild(d);
   if (inputValue === '') {
     alert("You must give a title!");

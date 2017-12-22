@@ -5,18 +5,22 @@ from .forms import ActivityForm
 from django.shortcuts import redirect
 
 
-# Create your views here.
+# If the user is not logged in, they will get an empty activity List
+# If the user is logged in, they get the list of objects which they are author of
 def activity_list(request):
-    #activities = Activity.objects.all()
     if not request.user.is_authenticated:
         activities = None
     else:
         activities = Activity.objects.filter(author=request.user)
     return render(request, 'todo/activity_list.html', {'activities': activities})
 
+#If a user requests an activity which they did not write, they are redirected to their activity_list
 def activity_detail(request, pk):
     activity = get_object_or_404(Activity, pk=pk)
-    return render(request, 'todo/activity_detail.html', {'activity': activity})
+    if request.user==activity.author:
+        return render(request, 'todo/activity_detail.html', {'activity': activity})
+    else:
+        return redirect('activity_list')
 
 def add_new(request):
     if request.method == "POST":
