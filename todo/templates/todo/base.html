@@ -7,27 +7,35 @@
   </head>
 
   <body>
-    <div id="loginBar" class="parent" style="display:none">
-      <input type="text" id="username" placeholder="Username" class="loginClass">
-      <input type="text" id="password" placeholder="Password" class="loginClass">
-      <span onClick="attemptLogin()" class="loginBtn button">Log In</span>
-      <span class="button"><a href="register.html" >Register</a></span>
-    </div>
+    {% if not user.is_authenticated %}
+      <div id="loginBar" class="parent" style="display:none">
+        <input type="text" id="username" placeholder="Username" class="loginClass">
+        <input type="text" id="password" placeholder="Password" class="loginClass">
+        <span onClick="attemptLogin()" class="loginBtn button">Log In</span>
+        <span class="button"><a href="register.html">Register</a></span>
+      </div>
+    {% endif %}
     <div id="myDIV" class="header parent">
-      <span onclick="loginSlideAnimation()" id="loginSlide" class="button">Log In</span>
-      <h2 id="title">My To Do List</h2>
-      <input type="text" id="myInput" placeholder="Title...">
-      <input type="text" id="myDesc" placeholder="Description...">
-      <span onclick="newElement()" class="addBtn button">Add</span>
+      {% if user.is_authenticated %}
+        <span id="loginSlide" class="button">Log Out</span>
+        <h2 id="title"><a href="{% url 'activity_list' %}">My To Do List</a></h2>
+        <a href="{% url 'add_new' %}" class="top-menu"><span class="addBtn button">Add new activity</span></a>
+      {% endif %}      
+      {% if not user.is_authenticated %}
+        <span onclick="loginSlideAnimation()" id="loginSlide" class="button">Log In</span>
+        <h2 id="title"><a href="{% url 'activity_list' %}">My To Do List</a></h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <input type="text" id="myDesc" placeholder="Description...">
+        <span onclick="newElement()" class="addBtn button">Add</span>
+      {% endif %}
     </div>
 
-    <ul id="myUL">
-      {% block content %}
-      {% endblock %}
-    </ul>
+    {% block content %}
+    {% endblock %}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="js/slide.js"></script>
-    <script language="JavaScript" type="text/javascript" src="js/script.js"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static "js/slide.js" %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static "js/script.js" %}"></script>
 
   </body>
 </html>

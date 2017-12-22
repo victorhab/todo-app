@@ -1,10 +1,15 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-  {% for activity in activities %}
-    <li class="activity">
-      <h4><a href="{% url 'activity_detail' pk=activity.pk %}">{{ activity.title }}</a></h4>
-      {{ activity.description|linebreaksbr }}
-    </li>
-  {% endfor %}
+
+  <ul id="myUL">
+    {% if user.is_authenticated %}
+      {% for activity in activities %}
+        <li class="activity">
+          <h4><a href="{% url 'activity_detail' pk=activity.pk %}">{{ activity.title }}</a></h4>
+          {{ activity.description|linebreaksbr }}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
 {% endblock %}

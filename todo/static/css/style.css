@@ -15,13 +15,19 @@ h3 {
   width: 20%;
 }
 
-h4 a {
-  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+a {
   text-decoration: none;
+  color: #555;
 }
 
-p {
-  text-align: left !important;
+label {
+  text-align: left;
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+}
+
+#id_title {
+  border-width: 1px;
+  border-color: #555;
 }
 
 /* Remove margins and padding from the list */
@@ -77,6 +83,14 @@ ul li.checked::before {
     width: 7px;
 }
 
+form, p {
+  background-color: #636363;
+  padding: 30px 40px;
+  color: white;
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+  min-width: 340px;
+}
+
 #loginBar {
   background-color: #636363;
   padding: 30px 40px;
@@ -105,6 +119,15 @@ ul li.checked::before {
 .close:hover {
     background-color: #f44336;
     color: white;
+}
+
+.title-header {
+  background-color: #636363;
+  padding: 30px 40px;
+  color: white;
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+  text-align: center;
+  min-width: 340px;
 }
 
 /* Style the header */
@@ -156,6 +179,14 @@ input {
 
 .button:hover {
     background-color: #bbb;
+}
+
+.post-form {
+  background-color: #636363;
+  padding: 30px 40px;
+  color: white;
+  font-family: "Josefin Slab", "Helvetica Nueve", Helvetica, Arial, sans-serif;
+  min-width: 340px;
 }
 
 #myDesc {
