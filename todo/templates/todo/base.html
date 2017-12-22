@@ -9,10 +9,12 @@
   <body>
     {% if not user.is_authenticated %}
       <div id="loginBar" class="parent" style="display:none">
-        <input type="text" id="username" placeholder="Username" class="loginClass">
-        <input type="text" id="password" placeholder="Password" class="loginClass">
-        <span onClick="attemptLogin()" class="loginBtn button">Log In</span>
-        <span class="button"><a href="register.html">Register</a></span>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="loginBtn button">Log In</button>          
+          <span class="button"><a href="{% url 'register' %}">Register</a></span>
+        </form>
       </div>
     {% endif %}
     <div id="myDIV" class="header parent">
@@ -20,9 +22,9 @@
         <span id="loginSlide" class="button">Log Out</span>
         <h2 id="title"><a href="{% url 'activity_list' %}">My To Do List</a></h2>
         <a href="{% url 'add_new' %}" class="top-menu"><span class="addBtn button">Add new activity</span></a>
-      {% endif %}      
+      {% endif %}
       {% if not user.is_authenticated %}
-        <span onclick="loginSlideAnimation()" id="loginSlide" class="button">Log In</span>
+        <span id="loginSlide" class="button">Log In</span>
         <h2 id="title"><a href="{% url 'activity_list' %}">My To Do List</a></h2>
         <input type="text" id="myInput" placeholder="Title...">
         <input type="text" id="myDesc" placeholder="Description...">
